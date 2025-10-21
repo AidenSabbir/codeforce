@@ -1,14 +1,12 @@
 # https://codeforces.com/problemset/problem/158/A
-n = list(map(int,input().split()))
-
-points = list(map(int,input().split()))
-nxtlvl = 0
-if points[0] >= n[1]:
-    for i in range(len(points)-1):
-        if points[i] >= points[i+1]:
-            nxtlvl += 1
-        else:
-            pass
-    print(nxtlvl-1)
+n, k = map(int,input().split())
+scores = list(map(int,input().split()))
+kthScore = scores[k-1]
+count = 0
+if sum(scores) != 0:
+    for i in scores:
+        if i >= kthScore and i > 0:
+            count += 1
+    print(count)
 else:
-    print(nxtlvl)
+    print(count)
