@@ -1,7 +1,4 @@
 # https://codeforces.com/problemset/problem/110/A
-n = input()
-r = 0
-for i in n:
-    if i not in ('4','7'):
-        r += 1
-print('NO' if r else 'YES')
+n = list(map(int,input()))
+c = sum(1 for d in n if d in (4,7))
+print("YES" if c in (4,7) else 'NO')
